@@ -14,7 +14,14 @@ print(sc.getConf().getAll())
 
     """
 #Creating RDDs
-names  = sc.parallelize(['abdelsam','hanae','said','faiz','naima','ismail','soufiane','ikrame','mohamed'])
+names  = sc.parallelize(['abdeslam','hanae','said','faiz','naima','ismail','soufiane','ikrame','mohamed'])
 print(type(names))
 print(names.collect())
 print (names.countByValue())
+def show(x):
+    print(x)
+    a=sc.parallelize([1,2,3,4,5].foreach(lambda x: print(x)))
+
+
+employes = sc.textFile("emloyees.txt") 
+print(type(employes))     
